@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+import joseFreitasLogo from '../assets/images/jose-freitas-logo.png';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -30,7 +31,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <Link to="/" className="flex items-center gap-4 group">
             <div className="relative">
               <img
-                src="/src/assets/images/jose-freitas-logo.png"
+                src={joseFreitasLogo}
                 alt="Logo José Freitas"
                 className="h-10 w-10 object-contain"
               />
@@ -103,7 +104,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <Reveal variant="fadeUp" className="md:col-span-5 space-y-8">
                 <div className="flex items-center gap-4">
                   <img
-                    src="/src/assets/images/jose-freitas-logo.png"
+                    src={joseFreitasLogo}
                     alt="Logo José Freitas"
                     className="h-10 w-10 object-contain"
                   />

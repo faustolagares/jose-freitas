@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Brain, MessageCircle, User, ShieldCheck, Users, Presentation, Target } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+import heroBackground from '../assets/images/regenerated_image_1777906366404.png';
+import aboutBackground from '../assets/images/regenerated_image_1777919177858.png';
+import joseFreitasPhoto from '../assets/images/jose-freitas.png';
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -49,7 +52,7 @@ export const LandingPage: React.FC = () => {
       <section id="home" className="min-h-[90vh] md:min-h-screen bg-marinho relative flex items-center pt-32 pb-40 md:py-0 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/regenerated_image_1777906366404.png"
+            src={heroBackground}
             alt="Dr. José Freitas — Psicólogo e Neuropsicólogo em Nerópolis, GO"
             fetchPriority="high"
             loading="eager"
@@ -213,7 +216,7 @@ export const LandingPage: React.FC = () => {
       <section id="sobre" className="bg-marinho relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/regenerated_image_1777919177858.png"
+            src={aboutBackground}
             alt=""
             role="presentation"
             loading="lazy"
@@ -231,7 +234,7 @@ export const LandingPage: React.FC = () => {
               <div className="absolute inset-x-6 bottom-0 z-0 h-[78%] rounded-[40%] bg-marinho-deep/85 blur-3xl opacity-80 pointer-events-none" />
               <Reveal variant="fadeLeft" className="relative z-10 w-full h-[85%] lg:h-[95%] overflow-hidden">
                 <img
-                  src="/src/assets/images/jose-freitas.png"
+                  src={joseFreitasPhoto}
                   alt="Dr. José Freitas — Psicólogo e Neuropsicólogo"
                   loading="lazy"
                   decoding="async"
