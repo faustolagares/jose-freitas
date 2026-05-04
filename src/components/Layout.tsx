@@ -63,7 +63,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </a>
             ))}
             <a
-              href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
+              href="https://wa.me/5562992284005?text=Olá%2C%20Psicólogo%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
               target="_blank"
               rel="noopener noreferrer"
               className={`px-8 py-3 border rounded-sm text-[13px] font-serif font-semibold uppercase tracking-[0.18em] flex items-center gap-3 transition-all group ${
@@ -111,7 +111,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               </div>
 
               <a
-                href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
+                href="https://wa.me/5562992284005?text=Olá%2C%20Psicólogo%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[13px] font-serif font-semibold uppercase tracking-[0.18em] text-white transition-all hover:bg-white hover:text-marinho"

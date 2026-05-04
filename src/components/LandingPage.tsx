@@ -53,7 +53,7 @@ export const LandingPage: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img
             src={heroBackground}
-            alt="Dr. José Freitas — Psicólogo e Neuropsicólogo em Nerópolis, GO"
+            alt="José Freitas — Psicólogo e Neuropsicólogo em Nerópolis, GO"
             fetchPriority="high"
             loading="eager"
             decoding="async"
@@ -115,7 +115,7 @@ export const LandingPage: React.FC = () => {
               className="flex flex-wrap gap-8 items-center pt-4 md:pt-8"
             >
               <a
-                href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
+                href="https://wa.me/5562992284005?text=Olá%2C%20Psicólogo%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group px-12 py-5 bg-white text-marinho text-[15px] font-serif font-semibold uppercase tracking-[0.18em] rounded-sm hover:bg-prata-quente transition-all duration-300 flex items-center gap-4"
@@ -235,7 +235,7 @@ export const LandingPage: React.FC = () => {
               <Reveal variant="fadeLeft" className="relative z-10 w-full h-[85%] lg:h-[95%] overflow-hidden">
                 <img
                   src={joseFreitasPhoto}
-                  alt="Dr. José Freitas — Psicólogo e Neuropsicólogo"
+                  alt="José Freitas — Psicólogo e Neuropsicólogo"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover object-top shadow-2xl saturate-[0.8] contrast-[1.05] hover:saturate-100 transition-all duration-1000"
@@ -417,7 +417,7 @@ export const LandingPage: React.FC = () => {
 
             <Reveal variant="fadeRight" delay={0.1} className="lg:col-span-6">
               <a
-                href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
+                href="https://wa.me/5562992284005?text=Olá%2C%20Psicólogo%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-marinho px-8 py-10 md:px-12 rounded-sm flex flex-col md:flex-row items-center justify-between gap-10 group hover:bg-marinho-deep transition-all duration-700 shadow-2xl shadow-marinho/40"
@@ -541,7 +541,7 @@ export const LandingPage: React.FC = () => {
             <Reveal variant="fadeUp" delay={0.3}>
               <div className="pt-10">
                 <a
-                  href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20iniciar%20uma%20avaliação."
+                  href="https://wa.me/5562992284005?text=Olá%2C%20Psicólogo%20José%20Freitas!%20Gostaria%20de%20iniciar%20uma%20avaliação."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group px-12 py-5 bg-marinho text-white text-[15px] font-serif font-semibold uppercase tracking-[0.18em] rounded-sm hover:bg-marinho-muted transition-all duration-300 flex items-center gap-4"
