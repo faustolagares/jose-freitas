@@ -26,11 +26,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   return (
     <div className="min-h-screen bg-marinho-deep transition-colors duration-300">
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled || isMenuOpen
-            ? 'bg-marinho-deep/95 backdrop-blur-md border-b border-white/5 py-4' 
-            : 'bg-transparent py-6'
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 bg-marinho-deep border-b border-white/5 transition-all duration-500 ${
+          isScrolled || isMenuOpen ? 'py-4' : 'py-6'
         }`}
       >
         <div className="container-custom flex justify-between items-center">

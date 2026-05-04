@@ -49,7 +49,7 @@ export const LandingPage: React.FC = () => {
     <div className="relative overflow-hidden bg-branco-osso">
 
       {/* ─── Hero ─────────────────────────────────────────────────── */}
-      <section id="home" className="min-h-[90vh] md:min-h-screen bg-marinho relative flex items-center pt-32 pb-40 md:py-0 overflow-hidden">
+      <section id="home" className="min-h-screen bg-marinho relative flex items-center pt-32 pb-40 md:py-0 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={heroBackground}
@@ -102,7 +102,7 @@ export const LandingPage: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.26, ease: EASE }}
-                className="text-xl md:text-2xl text-branco-osso/60 max-w-2xl leading-relaxed font-light font-subheadline"
+                className="text-xl md:text-2xl text-branco-osso/60 max-w-[260px] md:max-w-2xl leading-relaxed font-light font-subheadline"
               >
                 Avaliação e intervenção neuropsicológica planejada para todas as fases da vida, fundamentada no rigor clínico e olhar humano.
               </motion.p>
