@@ -31,8 +31,12 @@
 }
 
 @layer base {
+  html {
+    @apply bg-marinho-deep;
+  }
+
   body {
-    @apply bg-branco-osso text-cinza-carvao font-sans antialiased selection:bg-prata-quente/30 selection:text-marinho font-normal;
+    @apply bg-marinho-deep text-cinza-carvao font-sans antialiased selection:bg-prata-quente/30 selection:text-marinho font-normal;
   }
 
   h1, h2, h3, h4, h5, h6 {

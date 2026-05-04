@@ -8,7 +8,9 @@ import joseFreitasLogo from '../assets/images/jose-freitas-logo.png';
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const isHome = location.pathname === '/';
+  const isDarkNav = isScrolled || isHome || isMenuOpen;
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +20,16 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  React.useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   return (
-    <div className="min-h-screen bg-branco-osso transition-colors duration-300">
+    <div className="min-h-screen bg-marinho-deep transition-colors duration-300">
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-marinho/95 backdrop-blur-md border-b border-white/5 py-4' 
+          isScrolled || isMenuOpen
+            ? 'bg-marinho-deep/95 backdrop-blur-md border-b border-white/5 py-4' 
             : 'bg-transparent py-6'
         }`}
       >
@@ -37,10 +43,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               />
             </div>
             <div className="flex flex-col">
-              <span className={`text-xl font-serif font-semibold tracking-[-0.02em] uppercase leading-none transition-colors duration-500 ${(isScrolled || isHome) ? 'text-white' : 'text-marinho'}`}>
+              <span className={`text-xl font-serif font-semibold tracking-[-0.02em] uppercase leading-none transition-colors duration-500 ${isDarkNav ? 'text-white' : 'text-marinho'}`}>
                 José Freitas
               </span>
-              <span className={`text-[9px] uppercase tracking-[0.25em] font-medium mt-1.5 transition-colors duration-500 ${(isScrolled || isHome) ? 'text-prata-quente/70' : 'text-marinho/50'}`}>
+              <span className={`text-[9px] uppercase tracking-[0.25em] font-medium mt-1.5 transition-colors duration-500 ${isDarkNav ? 'text-prata-quente/70' : 'text-marinho/50'}`}>
                 Psicólogo e Neuropsicólogo
               </span>
             </div>
@@ -52,7 +58,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
                 className={`text-[13px] uppercase tracking-[0.3em] font-medium transition-colors duration-500 ${
-                  (isScrolled || isHome) ? 'text-branco-osso/70 hover:text-white' : 'text-marinho/60 hover:text-marinho'
+                  isDarkNav ? 'text-branco-osso/70 hover:text-white' : 'text-marinho/60 hover:text-marinho'
                 }`}
               >
                 {item}
@@ -62,8 +68,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-8 py-3 border rounded-sm text-[12px] uppercase tracking-[0.25em] font-semibold flex items-center gap-3 transition-all group ${
-                (isScrolled || isHome)
+              className={`px-8 py-3 border rounded-sm text-[13px] font-serif font-semibold uppercase tracking-[0.18em] flex items-center gap-3 transition-all group ${
+                isDarkNav
                   ? 'border-white/20 text-white hover:bg-white hover:text-marinho'
                   : 'border-marinho/20 text-marinho hover:bg-marinho hover:text-branco-osso'
               }`}
@@ -72,11 +78,52 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </a>
           </div>
 
-          <button className="lg:hidden p-2">
-            <div className={`w-6 h-[1px] mb-2 ${(isScrolled || isHome) ? 'bg-white' : 'bg-marinho'}`} />
-            <div className={`w-4 h-[1px] ${(isScrolled || isHome) ? 'bg-white' : 'bg-marinho'}`} />
+          <button
+            type="button"
+            aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMenuOpen}
+            className="lg:hidden p-2"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <div className={`h-px mb-2 transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-[5px] rotate-45 bg-white' : `w-6 ${isDarkNav ? 'bg-white' : 'bg-marinho'}`}`} />
+            <div className={`h-px transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-[-4px] -rotate-45 bg-white' : `w-4 ${isDarkNav ? 'bg-white' : 'bg-marinho'}`}`} />
           </button>
         </div>
+
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:hidden border-t border-white/5 bg-marinho-deep/95 backdrop-blur-md"
+          >
+            <div className="container-custom py-8 space-y-8">
+              <div className="flex flex-col gap-6">
+                {['Home', 'Sobre', 'Processo', 'Avaliação', 'Palestras', 'Conteúdos'].map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-[13px] uppercase tracking-[0.35em] font-semibold text-branco-osso/75 hover:text-white transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 border border-white/20 px-6 py-4 text-[13px] font-serif font-semibold uppercase tracking-[0.18em] text-white transition-all hover:bg-white hover:text-marinho"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Agendar Avaliação <ArrowRight className="w-3 h-3" />
+              </a>
+            </div>
+          </motion.div>
+        )}
       </nav>
       
       <main>

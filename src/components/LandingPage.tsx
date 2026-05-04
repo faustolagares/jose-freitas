@@ -23,13 +23,13 @@ const HeroStat: React.FC<{ icon: React.ReactNode; label: string; sublabel: strin
 );
 
 const ServiceCard: React.FC<{ icon: React.ReactNode; title: string; description: string }> = ({ icon, title, description }) => (
-  <div className="bg-white/40 border border-marinho/5 p-10 md:p-12 rounded-3xl space-y-10 flex flex-col items-start transition-all hover:bg-white hover:shadow-2xl hover:shadow-marinho/5 group">
+  <div className="bg-white/40 border border-marinho/5 p-10 md:p-12 rounded-[10px] space-y-10 flex flex-col items-start transition-all hover:bg-white hover:shadow-2xl hover:shadow-marinho/5 group">
     <div className="text-marinho-muted group-hover:text-marinho transition-colors duration-500">
       {icon}
     </div>
     <div className="space-y-6">
       <div className="w-10 h-[1px] bg-marinho/10 group-hover:bg-prata-quente transition-all duration-500" />
-      <h3 className="text-[32px] md:text-3xl font-serif text-marinho leading-tight font-medium">{title}</h3>
+      <h3 className="text-2xl md:text-3xl font-serif text-marinho leading-tight font-medium">{title}</h3>
       <p className="text-[16px] md:text-[17px] font-sans font-light text-cinza-carvao/80 leading-relaxed">
         {description}
       </p>
@@ -92,7 +92,7 @@ export const LandingPage: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.12, ease: EASE }}
-                className="text-[80px] sm:text-8xl md:text-9xl lg:text-[140px] font-serif text-branco-osso leading-[0.85] font-medium tracking-tighter"
+                className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[140px] font-serif text-branco-osso leading-[0.92] md:leading-[0.85] font-medium tracking-tighter"
               >
                 Compreender <br />
                 <span className="italic text-prata-quente">para orientar.</span>
@@ -102,7 +102,7 @@ export const LandingPage: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.26, ease: EASE }}
-                className="text-xl md:text-[24px] text-branco-osso/60 max-w-2xl leading-relaxed font-light font-subheadline"
+                className="text-xl md:text-2xl text-branco-osso/60 max-w-2xl leading-relaxed font-light font-subheadline"
               >
                 Avaliação e intervenção neuropsicológica planejada para todas as fases da vida, fundamentada no rigor clínico e olhar humano.
               </motion.p>
@@ -118,7 +118,7 @@ export const LandingPage: React.FC = () => {
                 href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20agendar%20uma%20avaliação."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group px-12 py-5 bg-white text-marinho text-[12px] font-bold uppercase tracking-[0.4em] rounded-sm hover:bg-prata-quente transition-all duration-300 flex items-center gap-4"
+                className="group px-12 py-5 bg-white text-marinho text-[15px] font-serif font-semibold uppercase tracking-[0.18em] rounded-sm hover:bg-prata-quente transition-all duration-300 flex items-center gap-4"
               >
                 Agendar Avaliação <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
@@ -165,14 +165,14 @@ export const LandingPage: React.FC = () => {
             </Reveal>
 
             <Reveal variant="fadeUp" delay={0.1}>
-              <h2 className="text-5xl md:text-7xl font-serif text-marinho leading-[1.05] font-medium tracking-[-0.03em]">
+              <h2 className="text-5xl md:text-7xl font-serif text-marinho leading-[1.12] md:leading-[1.05] font-medium tracking-[-0.03em]">
                 Avaliação, escuta <br className="hidden md:block" /> e orientação para <br className="hidden md:block" />
                 <span className="italic text-marinho-muted">cada fase da vida.</span>
               </h2>
             </Reveal>
 
             <Reveal variant="fadeUp" delay={0.2}>
-              <p className="text-xl md:text-[24px] text-marinho/60 max-w-lg leading-relaxed font-light font-subheadline">
+              <p className="text-xl md:text-2xl text-marinho/60 max-w-lg leading-relaxed font-light font-subheadline">
                 Um trabalho clínico voltado à compreensão do funcionamento cognitivo, emocional e comportamental, com orientação clara para famílias, escolas e indivíduos.
               </p>
             </Reveal>
@@ -256,7 +256,7 @@ export const LandingPage: React.FC = () => {
                 </Reveal>
 
                 <Reveal variant="fadeUp" delay={0.2}>
-                  <h2 className="text-5xl md:text-7xl lg:text-[80px] font-serif text-white leading-[1.05] font-medium tracking-[-0.03em]">
+                  <h2 className="text-5xl md:text-7xl lg:text-[80px] font-serif text-white leading-[1.12] md:leading-[1.05] font-medium tracking-[-0.03em]">
                     Experiência clínica <br />
                     com olhar humano <br />
                     <span className="italic text-prata-quente">e base científica.</span>
@@ -266,10 +266,10 @@ export const LandingPage: React.FC = () => {
 
               <Reveal variant="fadeUp" delay={0.3}>
                 <div className="space-y-10 max-w-xl">
-                  <p className="text-xl md:text-[24px] text-branco-osso/60 leading-relaxed font-light font-subheadline">
+                  <p className="text-xl md:text-2xl text-branco-osso/60 leading-relaxed font-light font-subheadline">
                     José Freitas atua como psicólogo e neuropsicólogo, com foco na compreensão do funcionamento cognitivo, emocional e comportamental em diferentes fases da vida.
                   </p>
-                  <p className="text-xl md:text-[24px] text-branco-osso/60 leading-relaxed font-light font-subheadline">
+                  <p className="text-xl md:text-2xl text-branco-osso/60 leading-relaxed font-light font-subheadline">
                     Seu trabalho combina avaliação, escuta qualificada e orientação clara para apoiar decisões, intervenções e caminhos possíveis para cada pessoa, família ou instituição.
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export const LandingPage: React.FC = () => {
                       <Target className="w-8 h-8" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-white font-serif text-[26px] md:text-xl font-medium">Clareza</h4>
+                      <h4 className="text-white font-serif text-lg md:text-xl font-medium leading-tight">Clareza</h4>
                       <p className="text-branco-osso/40 text-[11px] leading-relaxed uppercase tracking-wider font-medium">
                         Avaliações e orientações organizadas para facilitar decisões.
                       </p>
@@ -297,7 +297,7 @@ export const LandingPage: React.FC = () => {
                       <Brain className="w-8 h-8" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-white font-serif text-[26px] md:text-xl font-medium">Método</h4>
+                      <h4 className="text-white font-serif text-lg md:text-xl font-medium leading-tight">Método</h4>
                       <p className="text-branco-osso/40 text-[11px] leading-relaxed uppercase tracking-wider font-medium">
                         Processos conduzidos com critério, escuta e responsabilidade.
                       </p>
@@ -311,7 +311,7 @@ export const LandingPage: React.FC = () => {
                       <User className="w-8 h-8" />
                     </div>
                     <div className="space-y-3">
-                      <h4 className="text-white font-serif text-[26px] md:text-xl font-medium">Desenvolvimento</h4>
+                      <h4 className="text-white font-serif text-lg md:text-xl font-medium leading-tight">Desenvolvimento</h4>
                       <p className="text-branco-osso/40 text-[11px] leading-relaxed uppercase tracking-wider font-medium">
                         Caminhos pensados para cada fase da vida e cada contexto.
                       </p>
@@ -338,14 +338,14 @@ export const LandingPage: React.FC = () => {
             </Reveal>
 
             <Reveal variant="fadeUp" delay={0.1}>
-              <h2 className="text-5xl md:text-7xl font-serif text-marinho leading-[1.05] font-medium tracking-[-0.03em]">
+              <h2 className="text-5xl md:text-7xl font-serif text-marinho leading-[1.12] md:leading-[1.05] font-medium tracking-[-0.03em]">
                 Um processo cuidadoso para compreender e orientar com{' '}
                 <span className="italic text-marinho-muted">clareza e segurança.</span>
               </h2>
             </Reveal>
 
             <Reveal variant="fadeUp" delay={0.2}>
-              <p className="text-xl md:text-[24px] text-marinho/60 max-w-3xl leading-relaxed font-light font-subheadline">
+              <p className="text-xl md:text-2xl text-marinho/60 max-w-3xl leading-relaxed font-light font-subheadline">
                 Cada etapa é conduzida com escuta, critério técnico e organização, para que a avaliação ou acompanhamento gere compreensão, segurança e próximos passos possíveis.
               </p>
             </Reveal>
@@ -391,7 +391,7 @@ export const LandingPage: React.FC = () => {
                     </span>
                   </div>
                   <div className="space-y-6">
-                    <h3 className="text-[32px] md:text-2xl font-serif text-marinho font-medium">{step.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-serif text-marinho font-medium leading-snug">{step.title}</h3>
                     <div className="w-8 h-[1.5px] bg-marinho-muted/40 group-hover:w-16 group-hover:bg-marinho-muted transition-all duration-700" />
                     <p className="text-[17px] text-marinho/80 leading-relaxed font-light font-sans">{step.desc}</p>
                   </div>
@@ -472,14 +472,14 @@ export const LandingPage: React.FC = () => {
               </Reveal>
 
               <Reveal variant="fadeUp" delay={0.1}>
-                <h2 className="text-5xl md:text-7xl font-serif text-branco-osso leading-[1.05] font-medium tracking-[-0.03em]">
+                <h2 className="text-5xl md:text-7xl font-serif text-branco-osso leading-[1.12] md:leading-[1.05] font-medium tracking-[-0.03em]">
                   Entender o <br /> funcionamento <br />
                   <span className="italic text-prata-quente">para orientar melhores decisões.</span>
                 </h2>
               </Reveal>
 
               <Reveal variant="fadeUp" delay={0.2}>
-                <p className="text-xl md:text-[24px] text-branco-osso/60 max-w-md leading-relaxed font-light font-subheadline">
+                <p className="text-xl md:text-2xl text-branco-osso/60 max-w-md leading-relaxed font-light font-subheadline">
                   A avaliação neuropsicológica investiga funções cognitivas, emocionais e comportamentais para compreender dificuldades, apoiar diagnósticos e indicar caminhos de intervenção.
                 </p>
               </Reveal>
@@ -511,7 +511,7 @@ export const LandingPage: React.FC = () => {
                       {item.icon}
                     </div>
                     <div className="space-y-4">
-                      <h3 className="text-[32px] md:text-3xl font-serif text-branco-osso group-hover:text-prata-quente transition-colors duration-500">
+                      <h3 className="text-2xl md:text-3xl font-serif text-branco-osso group-hover:text-prata-quente transition-colors duration-500 leading-snug">
                         {item.title}
                       </h3>
                       <p className="text-lg md:text-xl text-branco-osso/50 leading-relaxed font-light font-subheadline max-w-2xl">
@@ -543,7 +543,7 @@ export const LandingPage: React.FC = () => {
                   href="https://wa.me/5562992284005?text=Olá%2C%20Dr.%20José%20Freitas!%20Gostaria%20de%20iniciar%20uma%20avaliação."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group px-12 py-5 bg-marinho text-white text-[12px] font-bold uppercase tracking-[0.4em] rounded-sm hover:bg-marinho-muted transition-all duration-300 flex items-center gap-4"
+                  className="group px-12 py-5 bg-marinho text-white text-[15px] font-serif font-semibold uppercase tracking-[0.18em] rounded-sm hover:bg-marinho-muted transition-all duration-300 flex items-center gap-4"
                 >
                   Iniciar Avaliação <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
