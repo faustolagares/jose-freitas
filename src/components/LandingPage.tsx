@@ -252,6 +252,7 @@ export const LandingPage: React.FC = () => {
                   <div className="space-y-4">
                     <span className="text-[12px] uppercase tracking-[0.5em] font-bold text-prata-quente block">02. Sobre José Freitas</span>
                     <div className="w-12 h-[1.5px] bg-prata-quente opacity-40" />
+                    <span className="text-[10px] uppercase tracking-[0.35em] font-medium text-prata-quente/50 block">CRP 09/15189 · Nerópolis, GO</span>
                   </div>
                 </Reveal>
 
@@ -323,7 +324,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.01] to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-white/1 to-transparent pointer-events-none" />
       </section>
 
       {/* ─── Processo ─────────────────────────────────────────────── */}
@@ -382,11 +383,11 @@ export const LandingPage: React.FC = () => {
               <Reveal variant="fadeUp" delay={idx * 0.1}>
                 <div className="space-y-12 group">
                   <div className="flex items-center w-full h-10">
-                    <div className="flex-shrink-0 text-marinho-muted group-hover:text-marinho transition-colors duration-500">
+                    <div className="shrink-0 text-marinho-muted group-hover:text-marinho transition-colors duration-500">
                       {step.icon}
                     </div>
-                    <div className="flex-grow h-[1px] bg-marinho-muted/20 mx-6 group-hover:bg-marinho-muted/40 transition-colors duration-500" />
-                    <span className="flex-shrink-0 text-4xl font-serif italic text-marinho-muted/60 group-hover:text-marinho-muted transition-colors duration-500">
+                    <div className="grow h-px bg-marinho-muted/20 mx-6 group-hover:bg-marinho-muted/40 transition-colors duration-500" />
+                    <span className="shrink-0 text-4xl font-serif italic text-marinho-muted/60 group-hover:text-marinho-muted transition-colors duration-500">
                       {step.num}
                     </span>
                   </div>
@@ -552,7 +553,7 @@ export const LandingPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-32 bg-prata-quente opacity-20" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-32 bg-prata-quente opacity-20" />
       </section>
     </div>
   );
