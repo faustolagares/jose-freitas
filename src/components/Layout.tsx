@@ -11,6 +11,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const isHome = location.pathname === '/';
   const isDarkNav = isScrolled || isHome || isMenuOpen;
+  const hasNavBackground = isScrolled || isMenuOpen;
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +28,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <div className="min-h-screen bg-marinho-deep transition-colors duration-300">
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 bg-marinho-deep border-b border-white/5 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          hasNavBackground ? 'bg-marinho-deep border-b border-white/5' : 'bg-transparent border-b border-transparent'
+        } ${
           isScrolled || isMenuOpen ? 'py-4' : 'py-6'
         }`}
       >
