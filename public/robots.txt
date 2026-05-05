@@ -7,4 +7,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-Sitemap: https://jose-freitas.vercel.app/sitemap.xml
+Sitemap: https://www.psicologojosefreitas.com.br/sitemap.xml
