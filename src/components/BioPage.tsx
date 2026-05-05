@@ -70,6 +70,15 @@ export const BioPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-marinho-deep flex flex-col items-center justify-start px-3 pt-14 pb-12 relative overflow-hidden">
 
+      {/* Bio banner — top background image */}
+      <img
+        src="/bio-banner.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-0 left-0 w-full pointer-events-none select-none"
+        style={{ display: 'block' }}
+      />
+
       {/* Subtle background geometry */}
       <div className="fixed inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true">
         <svg viewBox="0 0 800 800" className="w-full h-full text-branco-osso" fill="none" stroke="currentColor" strokeWidth="0.4">
@@ -88,7 +97,7 @@ export const BioPage: React.FC = () => {
 
         {/* Profile photo */}
         <div style={fadeIn(0, visible)}>
-          <div className="w-24 h-24 rounded-full overflow-hidden border border-white/15">
+          <div className="w-28 h-28 rounded-full overflow-hidden border border-white/15">
             <img
               src="/jose-freitas-profile.png"
               alt="José Freitas — Psicólogo e Neuropsicólogo"
