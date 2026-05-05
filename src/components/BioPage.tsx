@@ -1,7 +1,5 @@
-import { motion } from 'motion/react';
+import React, { useEffect, useState } from 'react';
 import joseFreitasLogo from '../assets/images/jose-freitas-logo.png';
-
-const EASE = [0.16, 1, 0.3, 1] as const;
 
 const links = [
   {
@@ -41,8 +39,8 @@ const links = [
   },
   {
     label: 'E-mail',
-    sub: 'contato@psijosefreitas.com.br',
-    href: 'mailto:contato@psijosefreitas.com.br',
+    sub: 'josefreitaspsico2018@hotmail.com',
+    href: 'mailto:josefreitaspsico2018@hotmail.com',
     external: false,
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -53,7 +51,22 @@ const links = [
   },
 ];
 
+function fadeIn(delay: number, visible: boolean): React.CSSProperties {
+  return {
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'translateY(0)' : 'translateY(12px)',
+    transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
+  };
+}
+
 export const BioPage: React.FC = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setVisible(true));
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   return (
     <div className="min-h-screen bg-marinho-deep flex flex-col items-center justify-start px-3 pt-14 pb-12 relative overflow-hidden">
 
@@ -74,12 +87,7 @@ export const BioPage: React.FC = () => {
       <div className="w-full max-w-sm relative z-10 flex flex-col items-center gap-7">
 
         {/* Profile photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className="relative"
-        >
+        <div style={fadeIn(0, visible)}>
           <div className="w-24 h-24 rounded-full overflow-hidden border border-white/15">
             <img
               src="/jose-freitas-profile.png"
@@ -87,15 +95,10 @@ export const BioPage: React.FC = () => {
               className="w-full h-full object-cover object-[50%_8%]"
             />
           </div>
-        </motion.div>
+        </div>
 
         {/* Name + credentials */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
-          className="text-center space-y-3"
-        >
+        <div style={fadeIn(0.12, visible)} className="text-center space-y-3">
           <h1 className="font-serif text-[34px] text-white font-medium tracking-[-0.02em] leading-tight">
             José Freitas
           </h1>
@@ -105,60 +108,59 @@ export const BioPage: React.FC = () => {
           <p className="text-[11px] uppercase tracking-[0.25em] text-branco-osso/35 font-medium">
             CRP 09/15189 · Nerópolis, GO
           </p>
-        </motion.div>
+        </div>
 
         {/* Divider */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
+        <div
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: `scaleX(${visible ? 1 : 0})`,
+            transition: `opacity 0.5s cubic-bezier(0.16,1,0.3,1) 0.26s, transform 0.5s cubic-bezier(0.16,1,0.3,1) 0.26s`,
+            transformOrigin: 'left',
+          }}
           className="w-8 h-px bg-prata-quente/20"
         />
 
         {/* Link buttons */}
         <div className="w-full space-y-2.5">
           {links.map((link, idx) => (
-            <motion.a
-              key={link.label}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.35 + idx * 0.07, ease: EASE }}
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-4 w-full px-5 py-5 border border-white/8 rounded-sm text-branco-osso hover:border-prata-quente/30 hover:bg-white/3 transition-all duration-200 group"
-            >
-              <span className="text-prata-quente/50 group-hover:text-prata-quente/80 transition-colors duration-200 shrink-0">
-                {link.icon}
-              </span>
-              <div className="flex-1 min-w-0">
-                <span className="text-[16px] font-subheadline font-semibold text-white block leading-none mb-1.5">
-                  {link.label}
+            <div key={link.label} style={fadeIn(0.32 + idx * 0.07, visible)}>
+              <a
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+                className="flex items-center gap-4 w-full px-5 py-5 border border-white/8 rounded-sm text-branco-osso hover:border-prata-quente/30 hover:bg-white/3 transition-colors duration-200 group"
+              >
+                <span className="text-prata-quente/50 group-hover:text-prata-quente/80 transition-colors duration-200 shrink-0">
+                  {link.icon}
                 </span>
-                <span className="text-[12px] text-branco-osso/40 uppercase tracking-[0.15em] font-medium truncate block">
-                  {link.sub}
-                </span>
-              </div>
-              <svg viewBox="0 0 16 16" className="w-3 h-3 text-branco-osso/20 group-hover:text-prata-quente/40 group-hover:translate-x-0.5 transition-all duration-200 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4"/>
-              </svg>
-            </motion.a>
+                <div className="flex-1 min-w-0">
+                  <span className="text-[16px] font-subheadline font-semibold text-white block leading-none mb-1.5">
+                    {link.label}
+                  </span>
+                  <span className="text-[12px] text-branco-osso/40 uppercase tracking-[0.15em] font-medium truncate block">
+                    {link.sub}
+                  </span>
+                </div>
+                <svg viewBox="0 0 16 16" className="w-3 h-3 text-branco-osso/20 group-hover:text-prata-quente/40 group-hover:translate-x-0.5 transition-all duration-200 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
           ))}
         </div>
 
         {/* Footer */}
-        <motion.a
+        <a
           href="https://www.psicologojosefreitas.com.br"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.75, ease: EASE }}
+          style={fadeIn(0.72, visible)}
           className="flex items-center gap-2.5 mt-4 opacity-25 hover:opacity-50 transition-opacity duration-200"
         >
           <img src={joseFreitasLogo} alt="" className="h-4 w-4 object-contain" />
           <span className="text-[11px] uppercase tracking-[0.3em] font-medium text-branco-osso">
             psicologojosefreitas.com.br
           </span>
-        </motion.a>
+        </a>
 
       </div>
     </div>
