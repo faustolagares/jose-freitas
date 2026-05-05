@@ -55,7 +55,7 @@ const links = [
 
 export const BioPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-marinho-deep flex flex-col items-center justify-start px-5 pt-16 pb-12 relative overflow-hidden">
+    <div className="min-h-screen bg-marinho-deep flex flex-col items-center justify-start px-3 pt-14 pb-12 relative overflow-hidden">
 
       {/* Subtle background geometry */}
       <div className="fixed inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true">
@@ -71,7 +71,7 @@ export const BioPage: React.FC = () => {
       {/* Ambient glow */}
       <div className="fixed top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-prata-quente/4 blur-3xl pointer-events-none" aria-hidden="true" />
 
-      <div className="w-full max-w-xs relative z-10 flex flex-col items-center gap-8">
+      <div className="w-full max-w-sm relative z-10 flex flex-col items-center gap-7">
 
         {/* Profile photo */}
         <motion.div
@@ -96,13 +96,13 @@ export const BioPage: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
           className="text-center space-y-3"
         >
-          <h1 className="font-serif text-[28px] text-white font-medium tracking-[-0.02em] leading-tight">
+          <h1 className="font-serif text-[34px] text-white font-medium tracking-[-0.02em] leading-tight">
             José Freitas
           </h1>
-          <p className="text-[10px] uppercase tracking-[0.4em] font-medium text-prata-quente/70">
+          <p className="text-[13px] uppercase tracking-[0.3em] font-medium text-prata-quente/70">
             Psicólogo · Neuropsicólogo
           </p>
-          <p className="text-[9px] uppercase tracking-[0.3em] text-branco-osso/30 font-medium">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-branco-osso/35 font-medium">
             CRP 09/15189 · Nerópolis, GO
           </p>
         </motion.div>
@@ -126,16 +126,16 @@ export const BioPage: React.FC = () => {
               href={link.href}
               target={link.external ? '_blank' : undefined}
               rel={link.external ? 'noopener noreferrer' : undefined}
-              className="flex items-center gap-4 w-full px-5 py-4 border border-white/8 rounded-sm text-branco-osso hover:border-prata-quente/30 hover:bg-white/3 transition-all duration-200 group"
+              className="flex items-center gap-4 w-full px-5 py-5 border border-white/8 rounded-sm text-branco-osso hover:border-prata-quente/30 hover:bg-white/3 transition-all duration-200 group"
             >
               <span className="text-prata-quente/50 group-hover:text-prata-quente/80 transition-colors duration-200 shrink-0">
                 {link.icon}
               </span>
               <div className="flex-1 min-w-0">
-                <span className="text-[13px] font-serif font-semibold text-white block leading-none mb-1">
+                <span className="text-[16px] font-subheadline font-semibold text-white block leading-none mb-1.5">
                   {link.label}
                 </span>
-                <span className="text-[10px] text-branco-osso/35 uppercase tracking-[0.2em] font-medium truncate block">
+                <span className="text-[12px] text-branco-osso/40 uppercase tracking-[0.15em] font-medium truncate block">
                   {link.sub}
                 </span>
               </div>
@@ -155,7 +155,7 @@ export const BioPage: React.FC = () => {
           className="flex items-center gap-2.5 mt-4 opacity-25 hover:opacity-50 transition-opacity duration-200"
         >
           <img src={joseFreitasLogo} alt="" className="h-4 w-4 object-contain" />
-          <span className="text-[9px] uppercase tracking-[0.35em] font-medium text-branco-osso">
+          <span className="text-[11px] uppercase tracking-[0.3em] font-medium text-branco-osso">
             psicologojosefreitas.com.br
           </span>
         </motion.a>
